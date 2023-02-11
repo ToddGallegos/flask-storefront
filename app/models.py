@@ -37,10 +37,10 @@ class Candy(db.Model):
     description = db.Column(db.String(1000))
     price = db.Column(db.Float, nullable=False)
 
-    def __init__(self, candyName, imgUrl, caption, price):
+    def __init__(self, candyName, imgUrl, description, price):
         self.candyName = candyName
-        self.imgUrl = img_url
-        self.caption = caption
+        self.imgUrl = imgUrl
+        self.description = description
         self.price = price
 
     def saveToDB(self):
@@ -53,8 +53,7 @@ class Candy(db.Model):
         
     def to_dict(self):
         return {"id": self.id, 
-                "title": self.title, 
-                "img_url": self.img_url, 
-                "caption": self.caption, 
-                "price": self.price, 
-                "quantity": self.quantity}
+                "candyName": self.candyName, 
+                "imgUrl": self.imgUrl, 
+                "description": self.description, 
+                "price": self.price}
