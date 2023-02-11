@@ -1,4 +1,9 @@
-from app import app 
+from app import app
+from flask import request, redirect, url_for
+from .models import User, Candy
+from flask_login import login_user, logout_user, login_required
+from werkzeug.security import check_password_hash
+
 
 @app.route('/')
 def homePage():
